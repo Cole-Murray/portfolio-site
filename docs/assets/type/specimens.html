@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Display face candidates — Cole Murray</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..125,200..800&family=Syne:wght@400..800&family=Unbounded:wght@200..900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --fg: #f0f1f4;
+        --muted: #9ba0aa;
+        --faint: #71757e;
+        --line: #23262d;
+        --accent: #4d8dff;
+      }
+
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #0a0b0d;
+        color: var(--fg);
+        padding: 56px 64px 72px;
+        font-family: "IBM Plex Mono", monospace;
+      }
+
+      .specimen {
+        padding: 40px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .specimen:first-of-type {
+        border-top: 0;
+      }
+
+      .label {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        margin-bottom: 22px;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .label span {
+        color: var(--faint);
+        letter-spacing: 0.04em;
+        text-transform: none;
+      }
+
+      .name {
+        font-size: 78px;
+        line-height: 0.95;
+        letter-spacing: -0.055em;
+        font-weight: 600;
+      }
+
+      .headline {
+        margin-top: 14px;
+        font-size: 27px;
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+        font-weight: 500;
+        color: var(--fg);
+      }
+
+      .meta {
+        margin-top: 12px;
+        font-size: 13px;
+        color: var(--muted);
+        letter-spacing: 0.02em;
+      }
+
+      /* 1 — current pick */
+      .archivo .name,
+      .archivo .headline {
+        font-family: "Archivo", sans-serif;
+        font-stretch: 115%;
+      }
+
+      /* 2 */
+      .syne .name,
+      .syne .headline {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+      }
+
+      /* 3 */
+      .bricolage .name,
+      .bricolage .headline {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-stretch: 118%;
+      }
+
+      /* 4 */
+      .unbounded .name,
+      .unbounded .headline {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 600;
+      }
+
+      .unbounded .name {
+        letter-spacing: -0.045em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="specimen archivo">
+      <p class="label">01 — Archivo Extended <span>current pick</span></p>
+      <p class="name">Cole Murray</p>
+      <p class="headline">I build cloud tooling that makes internal teams faster.</p>
+      <p class="meta">
+        Wide industrial grotesque. Closest to Ermens. Neutral enough to stay
+        professional at every size.
+      </p>
+    </div>
+
+    <div class="specimen syne">
+      <p class="label">02 — Syne <span>alternative</span></p>
+      <p class="name">Cole Murray</p>
+      <p class="headline">I build cloud tooling that makes internal teams faster.</p>
+      <p class="meta">
+        Quirky geometric with odd, memorable letterforms. Most distinctive of the
+        four — reads design-studio more than engineer.
+      </p>
+    </div>
+
+    <div class="specimen bricolage">
+      <p class="label">03 — Bricolage Grotesque <span>alternative</span></p>
+      <p class="name">Cole Murray</p>
+      <p class="headline">I build cloud tooling that makes internal teams faster.</p>
+      <p class="meta">
+        Contemporary grotesque with slightly irregular terminals. Warmer and less
+        corporate than Archivo, still serious.
+      </p>
+    </div>
+
+    <div class="specimen unbounded">
+      <p class="label">04 — Unbounded <span>alternative</span></p>
+      <p class="name">Cole Murray</p>
+      <p class="headline">I build cloud tooling that makes internal teams faster.</p>
+      <p class="meta">
+        Wide geometric display. Highest impact, most fashion-forward, and the one
+        most likely to date quickly.
+      </p>
+    </div>
+  </body>
+</html>
