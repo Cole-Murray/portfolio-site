@@ -1,0 +1,19 @@
+# Local browser binaries (Chrome for Testing via @puppeteer/browsers)
+/chrome/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Dependencies / build
+node_modules/
+.next/
+out/
+dist/
+.vercel/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example

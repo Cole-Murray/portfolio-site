@@ -1,0 +1,497 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Design tokens — dark navy-charcoal shell, white type, one restrained accent.
+   Direction: docs/DESIGN.md (Ermens north star). No purple, no neon.
+   ========================================================================== */
+
+@theme {
+  /* Surfaces: near-black graphite. Only a trace of cool tint so the page reads
+     black rather than navy — the blue now lives in the accent and the top glow. */
+  --color-base: #0a0b0d;
+  --color-base-deep: #060709;
+  --color-surface: #101216;
+  --color-surface-2: #16181d;
+  --color-surface-3: #1c1f25;
+
+  /* Hairlines */
+  --color-line: #23262d;
+  --color-line-strong: #343841;
+
+  /* Type */
+  --color-fg: #f0f1f4;
+  --color-muted: #9ba0aa;
+  --color-faint: #71757e;
+
+  /* Single accent: soft steel-ice blue */
+  --color-accent: #8fb4e8;
+  --color-accent-deep: #5f8fce;
+
+  /* Local-only colour moments (one card each). Deliberately darker than
+     GitHub's own palette so the grid reads as texture, not as the loudest
+     thing on a navy page. */
+  --color-gh-0: #191b20;
+  --color-gh-1: #0f3b25;
+  --color-gh-2: #165c37;
+  --color-gh-3: #1f8145;
+  --color-gh-4: #2aa257;
+  --color-iron-red: #e0242c;
+  --color-iron-blue: #1f4e9c;
+
+  /* Illinois marks — hero Block I only. See docs/DESIGN.md on trademark use. */
+  --color-illini-orange: #e84a27;
+  --color-illini-navy: #13294b;
+
+  /* Type families (wired in src/lib/fonts.ts — deliberately not Inter) */
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    color-scheme: dark;
+    /*
+     * The bar below is 16px wide, and both the loader and the nav panel lock
+     * scrolling while they are up. Without a reserved gutter the bar vanishes
+     * and returns, shunting every centred element sideways by 16px each time.
+     */
+    scrollbar-gutter: stable;
+  }
+
+  /*
+   * Firefox has no ::-webkit-scrollbar, so it gets the standard properties —
+   * but only here. Chromium ignores the pseudo-elements entirely as soon as
+   * either standard scrollbar property is set, which would silently drop the
+   * width below back to the platform default.
+   */
+  @supports (-moz-appearance: none) {
+    html {
+      scrollbar-color: var(--color-accent-deep) var(--color-base-deep);
+    }
+  }
+
+  /* Chunky, borderless, accent-coloured bar — the platform default is thin and
+     draws its own inset border, which reads as a hairline box on a dark page. */
+  ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-base-deep);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(
+      180deg,
+      var(--color-accent),
+      var(--color-accent-deep)
+    );
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: var(--color-base-deep);
+  }
+
+  body {
+    position: relative;
+    background-color: var(--color-base);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv05";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  /*
+   * Atmosphere for the first screen only. Absolute (not fixed) so it is pinned
+   * to the top of the document and scrolls away instead of trailing the
+   * viewport; the mask fades it out so there is never a seam where it ends.
+   */
+  body::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 100vh;
+    min-height: 40rem;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        75rem 46rem at 14% -14%,
+        color-mix(in oklab, var(--color-accent) 17%, transparent),
+        transparent 66%
+      ),
+      radial-gradient(
+        56rem 38rem at 98% 6%,
+        color-mix(in oklab, var(--color-accent-deep) 12%, transparent),
+        transparent 68%
+      ),
+      linear-gradient(180deg, var(--color-base-deep), transparent 42%);
+    mask-image: linear-gradient(180deg, #000 62%, transparent);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  /*
+   * Push the display face onto the wide end of its width axis. This is the
+   * whole reason for choosing Archivo — the extended look is real outlines,
+   * not letter-spacing. Applied to the utility class too so non-heading
+   * display text (hero headline, loader) stays consistent.
+   */
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-stretch: 115%;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 32%, transparent);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* ==========================================================================
+   Shared components — the vocabulary every section composes from.
+   ========================================================================== */
+
+@layer components {
+  /* Small uppercase mono label that opens a section */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-faint);
+  }
+
+  .eyebrow-index {
+    color: var(--color-accent);
+  }
+
+  /* Dark opaque card with a touch of depth */
+  /*
+   * Borderless. Definition comes from a faintly lit top edge and a lift shadow
+   * rather than a hairline. The gloss is layered into `background` instead of a
+   * pseudo-element so it can never wash over card content — and kept low, since
+   * a strong diagonal sheen on a dark surface reads as plastic.
+   */
+  .surface-card {
+    position: relative;
+    border: 0;
+    border-radius: 1rem;
+    background:
+      linear-gradient(
+        148deg,
+        rgb(255 255 255 / 0.035),
+        rgb(255 255 255 / 0) 34%
+      ),
+      radial-gradient(
+        140% 120% at 6% -12%,
+        color-mix(in oklab, var(--color-accent) 5%, transparent),
+        transparent 56%
+      ),
+      linear-gradient(
+        168deg,
+        var(--color-surface-2),
+        var(--color-surface) 62%,
+        var(--color-base-deep)
+      );
+    box-shadow:
+      0 1px 0 0 rgb(255 255 255 / 0.045) inset,
+      0 28px 58px -30px rgb(0 0 0 / 0.85);
+  }
+
+  /*
+   * The terminal is the one card that keeps a hairline instead of a gloss. A
+   * matte, outlined panel is what makes it read as a window rather than as
+   * another polished tile.
+   */
+  .terminal-card {
+    position: relative;
+    border: 1px solid var(--color-line-strong);
+    border-radius: 1rem;
+    background: var(--color-surface);
+    box-shadow: 0 28px 58px -30px rgb(0 0 0 / 0.85);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 2.875rem;
+    padding-inline: 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    transition:
+      background-color 180ms var(--ease-out-soft),
+      border-color 180ms var(--ease-out-soft),
+      color 180ms var(--ease-out-soft),
+      transform 180ms var(--ease-out-soft);
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-primary {
+    background: var(--color-fg);
+    color: #08090b;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+  }
+
+  .btn-ghost {
+    border-color: var(--color-line-strong);
+    color: var(--color-fg);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--color-accent);
+    background: color-mix(in oklab, var(--color-accent) 10%, transparent);
+  }
+
+  /* Tech / tag pill */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3125rem 0.6875rem;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--color-surface-2) 70%, transparent);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.01em;
+    color: var(--color-muted);
+  }
+
+  /* Inline text link */
+  .link-underline {
+    color: var(--color-fg);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--color-accent) 55%, transparent);
+    text-underline-offset: 0.25em;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 180ms var(--ease-out-soft);
+  }
+
+  .link-underline:hover {
+    text-decoration-color: var(--color-accent);
+  }
+
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--color-line),
+      color-mix(in oklab, var(--color-line-strong) 80%, transparent),
+      transparent
+    );
+  }
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+
+@utility mask-fade-x {
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+@utility text-gradient-fg {
+  background: linear-gradient(180deg, #fff 10%, #ced1d8 98%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ==========================================================================
+   Motion — a few strong moves only (docs/DESIGN.md motion budget)
+   ========================================================================== */
+
+@keyframes marquee-x {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-marquee {
+  animation: marquee-x var(--marquee-duration, 42s) linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-caret {
+  animation: caret-blink 1.05s steps(1) infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 600ms var(--ease-out-soft) both;
+}
+
+@keyframes chevron-flare {
+  0%,
+  10% {
+    opacity: 0.16;
+  }
+  24%,
+  62% {
+    opacity: 1;
+  }
+  78%,
+  100% {
+    opacity: 0.16;
+  }
+}
+
+/*
+ * Sequential-taillight scroll cue: the three chevrons share one keyframe and
+ * are staggered by delay, so the light sweeps downward and then clears. The
+ * resting opacity keeps all three legible as a static arrow between sweeps.
+ */
+.scroll-chevron {
+  opacity: 0.5;
+  animation: chevron-flare 1.9s var(--ease-out-soft) infinite;
+}
+
+.scroll-chevron:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.scroll-chevron:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+/*
+ * Scroll reveal without JavaScript. Elements are visible by default, so
+ * browsers without scroll-driven animations (or with reduced motion) simply
+ * see the finished state.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: fade-up 700ms var(--ease-out-soft) both;
+      animation-timeline: view();
+      animation-range: entry 4% cover 22%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-marquee,
+  .animate-caret,
+  .animate-spin-slow,
+  .animate-fade-in,
+  .scroll-chevron {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+  }
+}
