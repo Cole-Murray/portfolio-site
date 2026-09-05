@@ -4,13 +4,13 @@ import type { SiteMeta } from "@/types/content";
 export const site: SiteMeta = {
   name: "Cole Murray",
   shortName: "Cole",
+  heroTitle: "Hi, I'm Cole",
   role: "Computer Engineering · University of Illinois",
-  headline: "I build cloud tooling that makes internal teams faster.",
-  intro:
-    "Rising sophomore in Computer Engineering at UIUC (Grainger) with a Hoeft Technology & Management minor. Two summers at Nerdio — most recently writing TypeScript services on Azure for identity auditing, governed LLM access, and webhook delivery.",
+  headline: "Computer Engineering @ UIUC, SWE Intern @ Nerdio",
+  heroNouns: ["student", "builder", "triathlete", "car enthusiast", "problem solver", "soccer player", "country music fan", "outdoorsman"],
   location: "Greater Chicagoland Area · Champaign, IL",
   email: "coleam2u@gmail.com",
-  url: "https://colemurray.vercel.app",
+  url: "https://colemurray.dev",
   contact: {
     headline: "Let's get in touch.",
     lead: "Email is the best way to reach me. LinkedIn, GitHub, and my résumé are below.",
