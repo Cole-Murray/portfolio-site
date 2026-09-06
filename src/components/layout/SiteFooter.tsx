@@ -12,8 +12,7 @@ export function SiteFooter() {
             © {year} {site.name}
           </p>
           <p className="text-xs leading-relaxed">
-            Built with Next.js, TypeScript, and Tailwind — planned with AI
-            assistance, process documented in the repo.
+            Built with Next.js, TypeScript, and Tailwind.
           </p>
         </div>
 

@@ -15,7 +15,6 @@ Personal portfolio site for **Cole Murray**, a UIUC Computer Engineering rising 
 | Copy / experience / projects | [docs/CONTENT.md](docs/CONTENT.md) |
 | Phases | [docs/ROADMAP.md](docs/ROADMAP.md) |
 | Visual direction | [docs/DESIGN.md](docs/DESIGN.md) |
-| Available tooling | [docs/TOOLS.md](docs/TOOLS.md) |
 
 ## Operating rules
 

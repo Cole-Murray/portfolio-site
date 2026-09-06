@@ -54,15 +54,15 @@ Capture specifics over time. Starting defaults:
 
 Track decisions here until resolved:
 
-- [ ] Preferred personal brand name / site title
+- [x] Preferred personal brand name / site title — Cole Murray · [colemurray.dev](https://colemurray.dev)
 - [x] LinkedIn — https://www.linkedin.com/in/cole-murray-184679367/
-- [x] Resume WIP ingested — `docs/assets/resume/ColeMurray_Resume.pdf` → [CONTENT.md](CONTENT.md)
-- [ ] Custom domain vs `*.vercel.app` for MVP
+- [x] Resume — `public/resume/ColeMurray_Resume.pdf` (facts mirrored in [CONTENT.md](CONTENT.md))
+- [x] Custom domain — `colemurray.dev` on Vercel
 - [x] Contact method — public site email: `coleam2u@gmail.com` (phone off-site; Illinois email resume-only)
 - [ ] Voice / tone bullets (how Cole wants to sound on the page)
 - [ ] Projects list (resume says Coming Soon)
-- [ ] Accent color + type pairing (see DESIGN.md open list)
-- [ ] Confirm tech marquee logos
+- [x] Accent color + type pairing (see DESIGN.md)
+- [x] Confirm tech marquee logos
 
 ## Related docs
 

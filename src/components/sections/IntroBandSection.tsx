@@ -49,7 +49,7 @@ export async function IntroBandSection() {
                 alt={headshot.alt}
                 fill
                 sizes="(min-width: 1024px) 270px, (min-width: 640px) 230px, 100vw"
-                className="object-cover object-top"
+                className="object-cover object-[center_20%]"
               />
             </div>
 

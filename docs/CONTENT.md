@@ -1,6 +1,6 @@
 # Portfolio content inventory
 
-Source of truth extracted from `docs/assets/resume/ColeMurray_Resume.pdf` (WIP resume, 2026-08). Owner will add projects later. Do **not** invent missing coursework, metrics, or projects.
+Source of truth extracted from the résumé (`public/resume/ColeMurray_Resume.pdf`, WIP). Owner will add projects later. Do **not** invent missing coursework, metrics, or projects.
 
 ## Identity
 
@@ -20,14 +20,14 @@ Source of truth extracted from `docs/assets/resume/ColeMurray_Resume.pdf` (WIP r
 | Phone | 847-460-2068 *(on resume only — not on public site)* |
 | GitHub | https://github.com/Cole-Murray |
 | LinkedIn | https://www.linkedin.com/in/cole-murray-184679367/ |
-| Resume PDF | `docs/assets/resume/ColeMurray_Resume.pdf` |
+| Resume PDF | `public/resume/ColeMurray_Resume.pdf` |
 | Other | |
 
 ## Photos
 
 | Asset | Path | Notes |
 | --- | --- | --- |
-| Headshot / intro photo | `docs/assets/photos/cole-murray-headshot.png` | Outdoor casual portrait (navy tee). Owner-approved for intro band; not a formal studio shot. |
+| Headshot / intro photo | `public/images/cole-murray-portrait.jpg` | Arms-crossed portrait with Block I backdrop; used in the intro terminal. |
 
 ## About / interests
 
@@ -52,7 +52,7 @@ Interests / hobbies worth showing (keep tasteful and specific):
 | Race date | **September 20, 2026** |
 | Display | Live countdown: days / hours / minutes / seconds |
 | Post-race behavior | Flip to “completed” / result state when ready *(TBD after race)* |
-| Logo asset | `docs/assets/brand/ironman-logo.png` (owner-provided). Trademarked brand — fine for personal portfolio; don’t imply official affiliation. |
+| Logo asset | `public/images/ironman-logo.png` (owner-provided). Trademarked brand — fine for personal portfolio; don’t imply official affiliation. |
 | Colors (from logo) | Red + blue accents — use sparingly on this card only so the site stays navy/white overall |
 
 ### GitHub contributions card
@@ -161,13 +161,13 @@ their marks for dark backgrounds.
 
 ## Assets needed
 
-- [x] Headshot — `docs/assets/photos/cole-murray-headshot.png`
-- [x] Resume PDF — `docs/assets/resume/ColeMurray_Resume.pdf` (WIP; projects TBD)
+- [x] Headshot — `public/images/cole-murray-portrait.jpg`
+- [x] Resume PDF — `public/resume/ColeMurray_Resume.pdf` (WIP; projects TBD)
 - [ ] Project screenshots / demos
 - [ ] Favicon / simple logo mark
 - [ ] Brand colors
 - [x] Confirm public contact: `coleam2u@gmail.com`; phone off-site
-- [x] Ironman: **IRONMAN 70.3 Michigan**, Frankfort, Michigan, September 20, 2026; logo at `docs/assets/brand/ironman-logo.png`
+- [x] Ironman: **IRONMAN 70.3 Michigan**, Frankfort, Michigan, September 20, 2026; logo at `public/images/ironman-logo.png`
 - [x] GitHub stats for MVP: **placeholder** contribution graph + fake/zeroed numbers; wire live API later
 - [x] Tech marquee logo list — logos only; Azure + Entra ID vendored under `public/images/brands/`
 - [ ] Fill projects when ready
