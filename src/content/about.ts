@@ -51,9 +51,9 @@ export const about: AboutContent = {
     logoAlt: "IRONMAN 70.3 logo",
   },
   headshot: {
-    src: "/images/cole-murray-headshot.jpg",
+    src: "/images/cole-murray-portrait.jpg",
     alt: "Cole Murray",
-    width: 770,
-    height: 1024,
+    width: 900,
+    height: 1200,
   },
 };

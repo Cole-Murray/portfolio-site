@@ -23,7 +23,7 @@ Status: **direction captured from owner references** (2026-08-11). Refine palett
 - **Post-hero intro band (bento, 3 cards):** Ermens-style card strip below the hero, adapted for a student portfolio:
   - **Left (largest, spans full height):** a **terminal window** containing the headshot + short bio, styled with window chrome and `>` prompt lines.
   - **Right top:** **GitHub contribution graph** (the green squares) + a few headline stats.
-  - **Right bottom:** **IRONMAN 70.3 Michigan** (Frankfort, Michigan) + live countdown to **September 20, 2026**. Logo: `docs/assets/brand/ironman-logo.png`.
+  - **Right bottom:** **IRONMAN 70.3 Michigan** (Frankfort, Michigan) + live countdown to **September 20, 2026**. Logo: `public/images/ironman-logo.png`.
 - **GitHub card (MVP):** Placeholder contribution grid + stats; live data later.
 - **Terminal motif — RESOLVED:** the site's single terminal moment is the **intro band's left card**. Do not apply terminal chrome anywhere else.
 - **Motion philosophy:** Prefer simple, reliable spinning / looping accents and smooth scroll reveals. Explicitly avoid ambitious Apple-style cinematic scroll explosions (owner previously attempted an autonomous-car explosion scroll and it failed).
@@ -45,7 +45,7 @@ Status: **direction captured from owner references** (2026-08-11). Refine palett
 
 ## Firsthand review (2026-08-11)
 
-Captured in a real browser (headless Edge via Puppeteer) and reviewed as screenshots in `docs/assets/refs/`. Notes below are from actually seeing them, and correct a few things the verbal description didn't capture.
+Captured in a real browser (headless Edge via Puppeteer) and reviewed against the reference sites directly. Notes below are from actually seeing them, and correct a few things the verbal description didn't capture.
 
 **#1 Ermens — corrections/additions:**
 - The hero "spin" is a **photoreal faceted iridescent crystal** rotating through a giant `WEBDESIGN` wordmark — visually stunning but **not cheap to build** (rendered 3D gem, not a basic spin). Treat as *aesthetic target*, not a literal build spec.
@@ -175,8 +175,7 @@ The width axis is applied in `globals.css` to `h1–h4` **and** the `.font-displ
 utility, so non-heading display text stays consistent. Changing the face means
 updating both `fonts.ts` and the `--font-display` token.
 
-Alternatives rendered against real hero copy in
-`docs/assets/type/specimens.html`: Syne, Bricolage Grotesque, Unbounded.
+Alternatives evaluated during type exploration (Syne, Bricolage Grotesque, Unbounded were considered; Archivo + IBM Plex shipped).
 
 - Distinctive display + readable body (not Inter/system default)
 - High contrast on dark backgrounds
@@ -192,8 +191,8 @@ Alternatives rendered against real hero copy in
 - [ ] Block I trademark (owner to review). The Illinois Block I is a University of Illinois mark, and the hero now renders it in the official orange (`#e84a27`) and navy (`#13294b`) at owner's request. Using it to indicate the school the owner actually attends is ordinary nominative use and low risk for a personal site, but it is closer to the protected mark than the earlier accent-blue wireframe was. Backing off is one prop: `shape="icosahedron"`.
 - [x] Navigation — no bar. Boxed `CO/MU` monogram top-left, `MENU` toggle top-right, panel slides in from the right.
 - [x] Terminal motif location — intro band left card only
-- [x] GitHub contributions for MVP — **placeholder** (live wiring later)
-- [x] Ironman race — **IRONMAN 70.3 Michigan**, Frankfort, Michigan, Sept 20, 2026; logo at `docs/assets/brand/ironman-logo.png`
+- [x] GitHub contributions — live GraphQL via `GITHUB_TOKEN`, with placeholder fallback
+- [x] Ironman race — **IRONMAN 70.3 Michigan**, Frankfort, Michigan, Sept 20, 2026; logo at `public/images/ironman-logo.png`
 - [ ] Post-race countdown behavior after Sept 20, 2026
 
 ## Notes for agents

@@ -10,6 +10,8 @@ origin: docs/CONTEXT.md, docs/DESIGN.md, docs/CONTENT.md, docs/STACK.md
 
 # Portfolio MVP - Plan
 
+> **Note (2026-09):** Process artifacts that lived under `docs/assets/` (reference screenshots, wireframes, QA captures, duplicate brand/resume sources) were removed so the public repo stays recruiter-clean. Runtime assets are in `public/`. This plan is kept as the historical implementation record.
+
 ## Goal Capsule
 
 **Objective:** Ship a single-page, dark-modern personal portfolio for Cole Murray on Next.js + TypeScript + Tailwind, deployed to Vercel, using real resume content (Nerdio featured) and tasteful motion — without over-engineering or inventing projects.
