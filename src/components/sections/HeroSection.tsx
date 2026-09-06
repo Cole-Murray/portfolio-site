@@ -1,4 +1,5 @@
 import { ExternalLink } from "@/components/ui/ExternalLink";
+import { RotatingNoun } from "@/components/ui/RotatingNoun";
 import { SpinningSolid } from "@/components/ui/SpinningSolid";
 import { site } from "@/content";
 import { SECTION_IDS } from "@/lib/constants";
@@ -37,15 +38,16 @@ export function HeroSection() {
           </p>
 
           <h1 className="text-gradient-fg mt-6 font-display text-5xl leading-[0.95] font-semibold tracking-[-0.055em] sm:text-7xl">
-            {site.name}
+            {site.heroTitle}
           </h1>
 
           <p className="mt-6 max-w-3xl font-display text-2xl leading-tight font-medium tracking-[-0.025em] text-fg md:text-3xl">
             {site.headline}
           </p>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
-            {site.intro}
+          <p className="mt-4 font-display text-xl leading-tight font-medium tracking-[-0.025em] text-muted sm:text-2xl">
+            <span aria-hidden="true">I&apos;m </span>
+            <RotatingNoun className="text-accent" nouns={site.heroNouns} />
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">

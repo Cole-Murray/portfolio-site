@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { ContributionGraph } from "@/components/ui/ContributionGraph";
+import { EmphasizedText } from "@/components/ui/EmphasizedText";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { RaceCountdown } from "@/components/ui/RaceCountdown";
 import { Section } from "@/components/ui/Section";
@@ -10,7 +11,7 @@ import { SECTION_IDS } from "@/lib/constants";
 import { getGitHubContributions, githubStatLabels } from "@/lib/github";
 
 export async function IntroBandSection() {
-  const { education, headshot, race } = about;
+  const { headshot, interests, race } = about;
   const github = await getGitHubContributions();
   const stats = githubStatLabels(github);
   const levels = github.days.map((day) => day.level);
@@ -64,25 +65,29 @@ export async function IntroBandSection() {
                 </p>
                 {/* Snapshot only — the About section carries the full bio. */}
                 <p className="mt-3 font-sans text-sm leading-relaxed text-muted">
-                  {about.bio[0]}
+                  <EmphasizedText>{about.bio[0]}</EmphasizedText>
                 </p>
               </div>
 
               <div>
                 <p className="flex items-center gap-2 text-xs text-fg">
                   <span className="text-accent">&gt;</span>
-                  <span>cat education.txt</span>
+                  <span>cat interests.txt</span>
                 </p>
-                <div className="mt-3 space-y-1 font-sans text-sm leading-relaxed text-muted">
-                  <p className="text-fg">{education.degree}</p>
-                  <p>{education.school}</p>
-                  <p>{education.college}</p>
-                  {education.minor ? <p>{education.minor}</p> : null}
-                  <p>
-                    {education.expected}
-                    {education.gpa ? ` · ${education.gpa}` : ""}
-                  </p>
-                </div>
+                <ul className="mt-3 flex list-none flex-wrap gap-2">
+                  {interests.map((interest) => (
+                    <li
+                      key={interest}
+                      className="group flex items-center gap-2 rounded-md bg-white/[0.045] px-2.5 py-1.5 font-mono text-[0.6875rem] leading-none text-muted shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition-colors hover:bg-white/[0.075] hover:text-fg"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="size-1 rounded-full bg-accent/65 transition-colors group-hover:bg-accent"
+                      />
+                      {interest}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

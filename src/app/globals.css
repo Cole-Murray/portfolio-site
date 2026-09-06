@@ -428,6 +428,36 @@
   animation: fade-in 600ms var(--ease-out-soft) both;
 }
 
+/*
+ * Hero noun rotator. Every phrase shares one grid cell, so the box takes the
+ * width of the longest and the line holds still while the words change. The
+ * outgoing word lifts away as the next rises into place; the travel is short
+ * and fades to nothing at both ends, so no clipping is needed and the box
+ * keeps its normal text baseline.
+ */
+.noun-rotator {
+  display: inline-grid;
+  text-align: left;
+}
+
+.noun-rotator-slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translate3d(0, 0.5em, 0);
+  transition:
+    opacity 460ms var(--ease-out-soft),
+    transform 460ms var(--ease-out-soft);
+}
+
+.noun-rotator-slide.is-leaving {
+  transform: translate3d(0, -0.5em, 0);
+}
+
+.noun-rotator-slide.is-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 @keyframes chevron-flare {
   0%,
   10% {

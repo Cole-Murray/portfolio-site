@@ -40,6 +40,7 @@ Interests / hobbies worth showing (keep tasteful and specific):
 - **Triathlon — IRONMAN 70.3 Michigan** in **Frankfort, Michigan** on **September 20, 2026** *(intro-band countdown card)*
 - Phi Gamma Nu Professional Business Fraternity (Athletics + Mr. Business Fundraising committees)
 - Spoken languages: English and Spanish
+- Intro terminal `cat interests.txt`: Artificial intelligence · Autonomous vehicles · Product development · Product management · Embedded systems · Cloud infrastructure · Developer tooling · Hardware–software systems · Space systems
 - *(owner TBD — e.g. F1 / Red Bull Racing interest hinted by headshot shirt; confirm before using)*
 
 ### Ironman 70.3 countdown card

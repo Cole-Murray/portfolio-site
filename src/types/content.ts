@@ -18,12 +18,15 @@ export interface SocialLink {
 }
 
 export interface SiteMeta {
+  /** Formal name — loader, footer, SEO, aria labels. */
   name: string;
   shortName: string;
+  /** Large hero greeting; separate from `name` so the loader can stay formal. */
+  heroTitle: string;
   role: string;
   headline: string;
-  /** One or two sentences under the headline. */
-  intro: string;
+  /** Nouns cycled under the headline. Articles are added automatically. */
+  heroNouns: string[];
   location: string;
   email: string;
   url: string;
@@ -91,6 +94,8 @@ export interface RaceEvent {
 export interface AboutContent {
   bio: string[];
   education: EducationEntry;
+  /** Curiosity areas shown under `cat interests.txt` in the intro terminal. */
+  interests: string[];
   awards: string[];
   languages: string[];
   activities: ActivityEntry[];
