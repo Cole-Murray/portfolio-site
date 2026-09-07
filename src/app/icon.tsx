@@ -4,8 +4,8 @@ export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
 /**
- * Tab favicon — a compact echo of the site monogram (white tile, CO/MU,
- * accent dot). Generated at request time so it stays in sync with the brand.
+ * Tab favicon — white tile + single C + accent dot. One letter stays legible
+ * at 16–32px where stacked CO/MU did not.
  */
 export default function Icon() {
   return new ImageResponse(
@@ -28,19 +28,17 @@ export default function Icon() {
             borderRadius: 5,
             background: "#f0f1f4",
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             color: "#060709",
-            fontSize: 9,
+            fontSize: 18,
             fontWeight: 700,
-            lineHeight: 0.9,
-            letterSpacing: "-0.05em",
+            lineHeight: 1,
+            letterSpacing: "-0.06em",
             fontFamily: "ui-sans-serif, system-ui, sans-serif",
           }}
         >
-          <div style={{ display: "flex" }}>CO</div>
-          <div style={{ display: "flex" }}>MU</div>
+          C
         </div>
         <div
           style={{
