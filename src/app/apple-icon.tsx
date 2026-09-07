@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-/** Home-screen / bookmark mark — same monogram, scaled for touch icons. */
+/** Home-screen / bookmark mark — same single-C tile as the favicon. */
 export default function AppleIcon() {
   return new ImageResponse(
     (
@@ -25,19 +25,17 @@ export default function AppleIcon() {
             borderRadius: 28,
             background: "#f0f1f4",
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             color: "#060709",
-            fontSize: 44,
+            fontSize: 92,
             fontWeight: 700,
-            lineHeight: 0.9,
-            letterSpacing: "-0.04em",
+            lineHeight: 1,
+            letterSpacing: "-0.05em",
             fontFamily: "ui-sans-serif, system-ui, sans-serif",
           }}
         >
-          <div style={{ display: "flex" }}>CO</div>
-          <div style={{ display: "flex" }}>MU</div>
+          C
         </div>
         <div
           style={{
