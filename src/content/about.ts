@@ -2,7 +2,7 @@ import type { AboutContent } from "@/types/content";
 
 export const about: AboutContent = {
   bio: [
-    "I'm a rising sophomore at the University of Illinois Urbana-Champaign majoring in **Computer Engineering** with a minor in **Hoeft Technology & Management**. Beyond academics, I'm active in a professional business fraternity, the Illinois Space Society, and the Illini Run Club.\nI have a strong passion for sports and fitness and I play on several intramural soccer teams and am currently training for my first half-Ironman in September.",
+    "I'm a sophomore at the University of Illinois Urbana-Champaign majoring in **Computer Engineering** with a minor in **Hoeft Technology & Management**. Beyond academics, I'm active in a professional business fraternity, the Illinois Space Society, and the Illini Run Club.\nI have a strong passion for sports and fitness and I play on several intramural soccer teams and am currently training for my first half-Ironman in September.",
     "Most of my engineering so far has happened at Nerdio, across two summers: first building internal tools, dashboards, and automations, then writing TypeScript services on Azure for identity auditing, governed LLM access, and webhook delivery.",
     "Outside of school I'm training for a half-Ironman, and I spend a lot of time figuring out how to work well alongside AI tooling rather than around it.",
   ],
