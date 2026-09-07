@@ -13,7 +13,7 @@ export const site: SiteMeta = {
   url: "https://colemurray.dev",
   contact: {
     headline: "Let's get in touch.",
-    lead: "Email is the best way to reach me. LinkedIn, GitHub, and my résumé are below.",
+    lead: "Email is the best way to reach me. LinkedIn, GitHub, and my resume are below.",
   },
   seo: {
     title: "Cole Murray — Computer Engineering @ Illinois",
@@ -53,7 +53,7 @@ export const site: SiteMeta = {
     },
     {
       platform: "resume",
-      label: "Résumé",
+      label: "Resume",
       value: "PDF",
       href: "/resume/ColeMurray_Resume.pdf",
       download: true,

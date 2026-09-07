@@ -14,7 +14,7 @@ function socialAriaLabel(social: SocialLink): string {
     case "github":
       return `Visit GitHub profile ${social.value}`;
     case "resume":
-      return "Download résumé (PDF)";
+      return "Download resume (PDF)";
   }
 }
 
