@@ -1,6 +1,6 @@
 # Portfolio content inventory
 
-Source of truth extracted from the résumé (`public/resume/ColeMurray_Resume.pdf`, WIP). Owner will add projects later. Do **not** invent missing coursework, metrics, or projects.
+Source of truth extracted from the résumé (`public/resume/ColeMurrayResume.pdf`, WIP). Owner will add projects later. Do **not** invent missing coursework, metrics, or projects.
 
 ## Identity
 
@@ -20,7 +20,7 @@ Source of truth extracted from the résumé (`public/resume/ColeMurray_Resume.pd
 | Phone | 847-460-2068 *(on resume only — not on public site)* |
 | GitHub | https://github.com/Cole-Murray |
 | LinkedIn | https://www.linkedin.com/in/cole-murray-184679367/ |
-| Resume PDF | `public/resume/ColeMurray_Resume.pdf` |
+| Resume PDF | `public/resume/ColeMurrayResume.pdf` |
 | Other | |
 
 ## Photos
@@ -162,7 +162,7 @@ their marks for dark backgrounds.
 ## Assets needed
 
 - [x] Headshot — `public/images/cole-murray-portrait.jpg`
-- [x] Resume PDF — `public/resume/ColeMurray_Resume.pdf` (WIP; projects TBD)
+- [x] Resume PDF — `public/resume/ColeMurrayResume.pdf` (WIP; projects TBD)
 - [ ] Project screenshots / demos
 - [ ] Favicon / simple logo mark
 - [ ] Brand colors
