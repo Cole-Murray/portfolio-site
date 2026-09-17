@@ -56,7 +56,7 @@ Track decisions here until resolved:
 
 - [x] Preferred personal brand name / site title — Cole Murray · [colemurray.dev](https://colemurray.dev)
 - [x] LinkedIn — https://www.linkedin.com/in/cole-murray-184679367/
-- [x] Resume — `public/resume/ColeMurray_Resume.pdf` (facts mirrored in [CONTENT.md](CONTENT.md))
+- [x] Resume — `public/resume/ColeMurrayResume.pdf` (facts mirrored in [CONTENT.md](CONTENT.md))
 - [x] Custom domain — `colemurray.dev` on Vercel
 - [x] Contact method — public site email: `coleam2u@gmail.com` (phone off-site; Illinois email resume-only)
 - [ ] Voice / tone bullets (how Cole wants to sound on the page)
