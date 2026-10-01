@@ -5,7 +5,6 @@ export const SECTION_IDS = {
   featured: "experience",
   experience: "earlier-experience",
   projects: "projects",
-  about: "about",
   contact: "contact",
 } as const;
 

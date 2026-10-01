@@ -2,7 +2,7 @@
 
 Personal site for **Cole Murray**, Computer Engineering at UIUC (Grainger). Live at **[colemurray.dev](https://colemurray.dev)**.
 
-Single-page scroll: boot loader → hero → intro bento (terminal + GitHub + race countdown) → featured Nerdio internship → earlier experience → projects → about → contact.
+Single-page scroll: boot loader → hero → intro bento (terminal + GitHub + race countdown) → featured Nerdio internship → earlier experience → projects → contact.
 
 ## Stack
 

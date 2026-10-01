@@ -11,7 +11,6 @@ const navItems = [
   { label: "Intro", href: `#${SECTION_IDS.intro}` },
   { label: "Experience", href: `#${SECTION_IDS.featured}` },
   { label: "Projects", href: `#${SECTION_IDS.projects}` },
-  { label: "About", href: `#${SECTION_IDS.about}` },
   { label: "Contact", href: `#${SECTION_IDS.contact}` },
 ];
 

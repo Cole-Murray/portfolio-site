@@ -63,7 +63,6 @@ export async function IntroBandSection() {
                     className="animate-caret h-4 w-px bg-accent"
                   />
                 </p>
-                {/* Snapshot only — the About section carries the full bio. */}
                 <p className="mt-3 font-sans text-sm leading-relaxed text-muted">
                   <EmphasizedText>{about.bio[0]}</EmphasizedText>
                 </p>

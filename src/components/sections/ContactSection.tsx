@@ -27,7 +27,7 @@ export function ContactSection() {
   return (
     <Section
       id={SECTION_IDS.contact}
-      index="07"
+      index="06"
       label="contact"
       headerClassName="max-w-4xl"
       title={
