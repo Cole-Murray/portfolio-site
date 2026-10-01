@@ -1,7 +1,6 @@
 import { PageLoader } from "@/components/layout/PageLoader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteNav } from "@/components/layout/SiteNav";
-import { AboutSection } from "@/components/sections/AboutSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { FeaturedExperienceSection } from "@/components/sections/FeaturedExperienceSection";
@@ -22,7 +21,6 @@ export default function Home() {
         <FeaturedExperienceSection />
         <ExperienceSection />
         <ProjectsSection />
-        <AboutSection />
         <ContactSection />
       </main>
       <SiteFooter />
