@@ -3,6 +3,7 @@ import {
   siClaude,
   siCplusplus,
   siCursor,
+  siGarmin,
   siGithub,
   siJavascript,
   siKotlin,
@@ -32,6 +33,7 @@ const registry = {
   snowflake: siSnowflake,
   streamlit: siStreamlit,
   kotlin: siKotlin,
+  garmin: siGarmin,
 } as const;
 
 export interface BrandMark {

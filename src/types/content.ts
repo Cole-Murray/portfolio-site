@@ -138,6 +138,11 @@ export interface Project {
   summary: string;
   tech: string[];
   links: { label: string; href: string }[];
+  /** Vendored brand mark under `public/images/brands/`, shown beside the name. */
+  logoSrc?: string;
+  logoAlt?: string;
+  /** simple-icons slug, used when there's no vendored `logoSrc`. */
+  iconSlug?: string;
 }
 
 export interface ProjectsContent {
