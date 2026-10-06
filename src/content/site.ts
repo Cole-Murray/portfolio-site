@@ -55,7 +55,7 @@ export const site: SiteMeta = {
       platform: "resume",
       label: "Resume",
       value: "PDF",
-      href: "/resume/ColeMurrayResume.pdf",
+      href: "/resume/Cole_Murray_Resume.pdf",
       download: true,
     },
   ],
